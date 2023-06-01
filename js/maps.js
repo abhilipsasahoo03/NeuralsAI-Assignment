@@ -2,7 +2,7 @@ var map;
 AmCharts.ready(function() {
     map = new AmCharts.AmMap();
     map.panEventsEnabled = true;
-    map.backgroundColor = "#ffffff";
+    map.backgroundColor = "#efebf8";
     map.backgroundAlpha = 1;
 
     map.zoomControl.panControlEnabled = true;
@@ -17,10 +17,10 @@ AmCharts.ready(function() {
 
     map.areasSettings = {
         autoZoom: false,
-        color: "#CDCDCD",
+        color: "#ffffff",
         colorSolid: "#d1ffbd",
         selectedColor: "#d1ffbd",
-        outlineColor: "#666666",
+        outlineColor: "#52931E",
         rollOverColor: "#d1ffbd",
         rollOverOutlineColor: "#90ee90",
         selectable: true
