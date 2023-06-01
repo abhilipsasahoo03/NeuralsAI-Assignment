@@ -76,4 +76,5 @@ function Reset()
       {
    map.dataProvider.areas[j].showAsSelected=false;
       }
+    map.write("chartdiv");
   }
