@@ -76,3 +76,4 @@ function Reset()
       {
    map.dataProvider.areas[j].showAsSelected=false;
       }
+  }
