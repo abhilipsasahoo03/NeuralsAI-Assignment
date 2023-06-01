@@ -69,3 +69,10 @@ function Search()
       }
       map.write("chartdiv");
     }
+
+function Reset()
+  {
+    for(var j in map.dataProvider.areas)
+      {
+   map.dataProvider.areas[j].showAsSelected=false;
+      }
