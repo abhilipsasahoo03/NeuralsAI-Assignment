@@ -18,11 +18,11 @@ AmCharts.ready(function() {
     map.areasSettings = {
         autoZoom: false,
         color: "#CDCDCD",
-        colorSolid: "#5EB7DE",
-        selectedColor: "#5EB7DE",
+        colorSolid: "#d1ffbd",
+        selectedColor: "#d1ffbd",
         outlineColor: "#666666",
-        rollOverColor: "#88CAE7",
-        rollOverOutlineColor: "#FFFFFF",
+        rollOverColor: "#d1ffbd",
+        rollOverOutlineColor: "#90ee90",
         selectable: true
     };
 
