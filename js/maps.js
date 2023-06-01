@@ -1,4 +1,5 @@
 var map;
+const AmCharts = window.AmCharts;
 AmCharts.ready(function() {
     map = new AmCharts.AmMap();
     map.panEventsEnabled = true;
