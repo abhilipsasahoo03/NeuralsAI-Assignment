@@ -1,5 +1,4 @@
 var map;
-import AmCharts from "https://www.amcharts.com/lib/3/ammap.js";
 AmCharts.ready(function() {
     map = new AmCharts.AmMap();
     map.panEventsEnabled = true;
