@@ -1,22 +1,53 @@
-var svg = d3.select("#mapContainer")
-  .append("svg")
-  .attr("width", "100%")
-  .attr("height", "100%");
+var map;
+AmCharts.ready(function() {
+    map = new AmCharts.AmMap();
+    map.panEventsEnabled = true;
+    map.backgroundColor = "#ffffff";
+    map.backgroundAlpha = 1;
 
-d3.json("../india_state_ut_administered.geojson").then(function(geojson) {
-  svg.append("g")
-    .selectAll("path")
-    .data(geojson.features)
-    .enter()
-    .append("path")
-    .attr("d", d3.geoPath())
-    .style("fill", "lightgray")
-    .style("stroke", "gray");
+    map.zoomControl.panControlEnabled = true;
+    map.zoomControl.zoomControlEnabled = true;
+
+    var dataProvider = {
+        map: "indiaLow",
+        getAreasFromMap: true
+    };
+
+    map.dataProvider = dataProvider;
+
+    map.areasSettings = {
+        autoZoom: false,
+        color: "#CDCDCD",
+        colorSolid: "#5EB7DE",
+        selectedColor: "#5EB7DE",
+        outlineColor: "#666666",
+        rollOverColor: "#88CAE7",
+        rollOverOutlineColor: "#FFFFFF",
+        selectable: true
+    };
+
+    map.addListener('clickMapObject', function(event) {
+        // deselect the area by assigning all of the dataProvider as selected object
+        map.selectedObject = map.dataProvider;
+
+        // toggle showAsSelected
+        event.mapObject.showAsSelected = !event.mapObject.showAsSelected;
+
+        // bring it to an appropriate color
+        map.returnInitialColor(event.mapObject);
+
+        // let's build a list of currently selected states
+        var states = [];
+        for (var i in map.dataProvider.areas) {
+            var area = map.dataProvider.areas[ i ];
+            if (area.showAsSelected) {
+                states.push(area.title);
+            }
+        }
+    });
+    map.export = {
+        enabled: true
+    }
+
+    map.write("chartdiv");
 });
-
-svg.append("text")
-  .attr("x", 820) // Adjust the x position accordingly
-  .attr("y", 470) // Adjust the y position accordingly
-  .attr("text-anchor", "middle")
-  .attr("font-size", "12px")
-  .text("Andhra Pradesh");
