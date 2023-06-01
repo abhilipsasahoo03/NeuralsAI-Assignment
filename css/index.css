@@ -7,3 +7,8 @@ body {
  background-color: #efebf8;
  font-family: 'Poppins', sans-serif;
 }
+
+footer {
+ bottom: 0;
+ position: fixed;
+}
