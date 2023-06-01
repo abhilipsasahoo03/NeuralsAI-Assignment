@@ -6,3 +6,7 @@
 body {
  background-color: #efebf8;
 }
+
+footer, h1 {
+ font-family: 'Poppins', sans-serif;
+}
