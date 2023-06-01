@@ -16,12 +16,15 @@
 
   <select id="states" name="states" >
     <option disabled selected>Search...</option>
-    <option id="KT">Karnataka</option>
-    <option id="OD">Odisha</option>
-    <option id="RJ">Rajasthan</option>
-    <option id="MP">Madhya Pradesh</option>
-    <option id="JH">Jharkhand</option>
+    <option disabled selected>Choose a state...</option>
+    <option id="KT" value="Karnataka">Karnataka</option>
+    <option id="OD" value="Odisha">Odisha</option>
+    <option id="RJ" value="Rajasthan">Rajasthan</option>
+    <option id="MP" value="Madhya Pradesh">Madhya Pradesh</option>
+    <option id="JH" value="Jharkhand">Jharkhand</option>
   </select>
+
+  <button onclick="Search()">Highlight</button>
   
 </label>
   <div id="chartdiv"></div>
